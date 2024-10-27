@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Set Streamlit page configuration
-st.set_page_config(page_title="Ask Me Anything Chatbot", page_icon="💬", layout="wide")
+st.set_page_config(page_title="QT Bot", page_icon="🎀", layout="wide")
 
 # Wolfram Alpha API Client
 appId = os.getenv('WOLFRAM_APP_ID')
@@ -25,7 +25,6 @@ def search_wiki(keyword=''):
         st.write("No result from Wikipedia")
         return None, None
     
-    # Try to get the most relevant page
     for result in search_results:
         try:
             page = wikipedia.page(result)
@@ -131,7 +130,7 @@ st.markdown(
 )
 
 # Streamlit User Interface
-st.title("💬 Ask Me Anything Chatbot")
+st.title("Ask Questions to Simple QBot")
 # Main chat interface
 st.markdown("<hr style='border:1px solid gray'>", unsafe_allow_html=True)
 user_input = st.text_input("Ask me a question:", "")
